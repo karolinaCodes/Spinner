@@ -1,14 +1,14 @@
 //spinner 1 refactored
 const symbolArray = ["|", "/", "-", "\\"];
 
-const timer = 100;
+let timer = 100;
 
-//outer loop makes the spinner spin around twice
-for (let i = 0; i <= 2; i++) {
-  //inner loop loops through symbol array outputs at respective intervals and increases the delay by 200 each time
-  for (let i = 0; i < symbolArray.length; i++) {
+// 1500 makes the spinner rotate 360 twice
+while (timer < 1500) {
+  //loop through symbol array
+  for (let j = 0; j < symbolArray.length; j++) {
     setTimeout(() => {
-      process.stdout.write(`\r${symbolArray[i]}   `);
-    }, timer + i * 200);
+      process.stdout.write(`\r${symbolArray[j]}   `);
+    }, (timer += 200));
   }
 }
